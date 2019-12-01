@@ -1,0 +1,15 @@
+version: '2'
+services:
+  service:
+    build: .
+    image: easy_serialize_php
+    ports:
+        - "9999:80"
+    volumes:
+        - "$PWD/www:/var/www/html"
+        - "$PWD/flag:/d0g3_fllllllag"
+    command: 
+        - /var/www/run.sh
+    stdin_open: true
+    tty: true
+

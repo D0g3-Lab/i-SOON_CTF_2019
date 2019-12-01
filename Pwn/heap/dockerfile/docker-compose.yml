@@ -1,0 +1,10 @@
+version: '2'
+services:
+ pwn_deploy_chroot:
+   image: pwn1:latest
+   build: .
+   volumes:
+        - "$PWD/flag:/home/pwn1/flag"
+   ports:
+        - 9999:10000
+    

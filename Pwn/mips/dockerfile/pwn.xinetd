@@ -1,0 +1,19 @@
+service ctf
+{
+    disable = no
+    socket_type = stream
+    protocol    = tcp
+    wait        = no
+    user        = root
+    type        = UNLISTED
+    port        = 10001
+    bind        = 0.0.0.0
+    server      = /usr/sbin/chroot   
+    server_args = --userspec=1000:1000 /home/pwn2 ./qemu-mipsel ./pwn2
+    # safety options
+    per_source  = 10 # the maximum instances of this service per source IP address
+    rlimit_cpu  = 20 # the maximum number of CPU seconds that the service may use
+    rlimit_as  = 100M # the Address Space resource limit for the service
+    #access_times = 2:00-9:00 12:00-24:00
+}
+

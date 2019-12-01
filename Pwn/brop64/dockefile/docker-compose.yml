@@ -1,0 +1,9 @@
+version: '2'
+services:
+ pwndocker3:
+   image: springpwndocker3
+   build: .
+   volumes:
+        - "$PWD/flag:/home/pwn/flag"
+   ports:
+        - 9999:44500

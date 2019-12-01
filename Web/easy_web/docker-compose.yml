@@ -1,0 +1,17 @@
+version: '2'
+services:
+  # 基本环境
+  service: # 容器名字
+    # build 该置顶目录下的dockerfile
+    build: .
+    # image指定build Dockerfile生成镜像的名称
+    image: easy_web
+    ports:
+        - 9999:80
+    volumes:
+        # 挂载的 Flag
+        - "$PWD/flag:/flag"
+    command: 
+        - /var/www/run.sh
+    stdin_open: true
+    tty: true

@@ -1,0 +1,11 @@
+version: '2'
+services:
+  service:
+    image: passer6y/axbcssgame:v2
+    build: .
+    volumes:
+      - ./flag:/passer6y/flag.txt
+    environment: 
+      TERM: xterm
+    ports:
+      - "9999:80"

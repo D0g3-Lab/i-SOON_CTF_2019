@@ -1,0 +1,14 @@
+version: '2'
+services:
+  service:
+    build: .
+    image: threezh1_anxun
+    ports:
+        - "9999:80"
+    volumes:
+        - "$PWD/www:/var/www/html"
+        - "$PWD/flag:/flag"
+    command: 
+        - /var/www/run.sh
+    stdin_open: true
+    tty: true
